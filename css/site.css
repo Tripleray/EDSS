@@ -1,0 +1,12 @@
+.navbar{
+    background-color:powderblue;
+}
+.navbar-brand{
+    color:darkgreen;
+}
+.navbar-nav>li>a{
+    color:darkgreen;
+}
+body{
+    background-color:palegreen;
+}
