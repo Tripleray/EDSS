@@ -26,7 +26,7 @@ a{
     color:black;
 }
 .nav-tabs.nav-justified {
-    background-color:#A8CD1B;
+    background-color:white;
 }
 .nav>li>a:focus, .nav>li>a:hover {
     background-color:lightblue;
