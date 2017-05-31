@@ -14,3 +14,15 @@ body{
 .navbar-inverse .navbar-nav>li>a {
     color:black;
 }
+a{
+    color:black;
+}
+.nav-tabs.nav-justified {
+    background-color:#A8CD1B;
+}
+.nav>li>a:focus, .nav>li>a:hover {
+    background-color:lightblue;
+}
+.nav-tabs.nav-justified>.active>a, .nav-tabs.nav-justified>.active>a:focus, .nav-tabs.nav-justified>.active>a:hover {
+    background-color:lightblue;
+}
