@@ -22,6 +22,15 @@ body{
 .navbar-inverse .navbar-nav>li>a {
     color:black;
 }*/
+.nav-tabs>li>a:hover {
+    border: 1px solid black;
+}
+.nav-tabs>li>a {
+    border: 1px solid #3a7843;
+}
+.nav-tabs.nav-justified>.active>a, .nav-tabs.nav-justified>.active>a:focus, .nav-tabs.nav-justified>.active>a:hover {
+    border: 1px solid black;
+}
 a{
     color:black;
 }
