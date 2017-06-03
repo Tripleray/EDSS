@@ -69,7 +69,10 @@ a{
 .page-header{
   border-bottom:1px solid black !important;
 }
-
+.application{
+  margin-top: 25px;
+  border-bottom:1px solid black !important;
+}
 
 .navbar-custom {
   background-color: #3a7843;
