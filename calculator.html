@@ -82,7 +82,16 @@
         <!-- Image Header -->
         <div class="row">
             <div class="col-lg-12">
-                <img class="img-responsive" src="http://placehold.it/1200x300" alt="">
+                <div class="well" id="calcresults" style="display:none; font-weight:bold;">
+                <h2 style="font-weight:bold;">Results:</h4>
+                <div id="step1results"> Step 1:</div>
+                <div id="step2results"> Step 2:</div>
+                <div id="step3results"> Step 3:</div>
+                <div id="step4results"> Step 4:</div>
+                <div id="step5results"> Step 5:</div>
+                <div id="step6results"> Step 6:</div>
+                <div id="step7results"> Step 7:</div>
+                </div>
             </div>
         </div>
         <!-- /.row -->
@@ -95,152 +104,180 @@
             <div class="col-lg-12">
 
                 <ul id="myTab" class="nav nav-tabs nav-justified">
-                    <li class="active"><a href="#service-one" data-toggle="tab">Step 1.</a>
+                    <li class="active inactive"><a href="#step-1" data-toggle="tab">Step 1.</a>
                     </li>
-                    <li class=""><a href="#service-two" data-toggle="tab">Step 2.</a>
+                    <li class="inactive"><a href="#step-2" data-toggle="tab">Step 2.</a>
                     </li>
-                    <li class=""><a href="#service-three" data-toggle="tab">Step 3.</a>
+                    <li class="inactive"><a href="#step-3" data-toggle="tab">Step 3.</a>
                     </li>
-                    <li class=""><a href="#service-four" data-toggle="tab">Step 4.</a>
+                    <li class="inactive"><a href="#step-4" data-toggle="tab">Step 4.</a>
                     </li>
-                    <li class=""><a href="#service-5" data-toggle="tab">Step 5.</a>
+                    <li class="inactive"><a href="#step-5" data-toggle="tab">Step 5.</a>
                     </li>
-                    <li class=""><a href="#service-6" data-toggle="tab">Step 6.</a>
+                    <li class="inactive"><a href="#step-6" data-toggle="tab">Step 6.</a>
                     </li>
-                    <li class=""><a href="#service-7" data-toggle="tab">Step 7.</a>
+                    <!--<li class=""><a href="#step-7" data-toggle="tab">Step 7.</a>
+                    </li>-->
+                    <li class="inactive"><a href="#step-7" data-toggle="tab">Step 7.</a>
                     </li>
-                    <li class=""><a href="#service-8" data-toggle="tab">Step 8.</a>
-                    </li>
-                    <li class=""><a href="#service-9" data-toggle="tab">Step 9.</a>
-                    </li>
+                    <!--<li class=""><a href="#step-9" data-toggle="tab">Step 9.</a>
+                    </li>-->
                 </ul>
 
                 <div id="myTabContent" class="tab-content">
-                    <div class="tab-pane fade active in" id="service-one">
+                    <div class="tab-pane fade active in" id="step-1">
                         <div class="container">
   <p>How much vegetation is present on the banks of the water body?</p>
   <form>
     <div class="radio">
-      <label><input type="radio" name="optradio">None</label>
+      <label><input type="radio" name="radiostep1" value="None">None</label>
     </div>
     <div class="radio">
-      <label><input type="radio" name="optradio">Very little</label>
+      <label><input type="radio" name="radiostep1" value="Very little">Very little</label>
     </div>
     <div class="radio">
-      <label><input type="radio" name="optradio">Moderate</label>
+      <label><input type="radio" name="radiostep1" value="Moderate">Moderate</label>
     </div>
     <div class="radio">
-      <label><input type="radio" name="optradio">Excessive</label>
+      <label><input type="radio" name="radiostep1" value="Excessive">Excessive</label>
     </div>
   </form>
 </div>
+
+<button type="button" class="btn btn-default " onclick="goNext()">Next</button>
                     </div>
-                    <div class="tab-pane fade" id="service-two">
+                    <div class="tab-pane fade" id="step-2">
                         <div class="container">
   <p>Using the provided -application descriptions-, what is your primary purpose of application?</p>
   <form>
     <div class="radio">
-      <label><input type="radio" name="optradio">Water Quality Remediation</label>
+      <label><input type="radio" name="radiostep2" value="Water Quality Remediation">Water Quality Remediation</label>
     </div>
     <div class="radio">
-      <label><input type="radio" name="optradio">Wildlife Habitat Management</label>
+      <label><input type="radio" name="radiostep2" value="Wildlife Habitat Management">Wildlife Habitat Management</label>
     </div>
     <div class="radio">
-      <label><input type="radio" name="optradio">Wetland Restoration</label>
+      <label><input type="radio" name="radiostep2" value="Wetland Restoration">Wetland Restoration</label>
     </div>
     <div class="radio">
-      <label><input type="radio" name="optradio">Lake Restoration</label>
+      <label><input type="radio" name="radiostep2" value="Lake Restoration">Lake Restoration</label>
     </div>
     <div class="radio">
-      <label><input type="radio" name="optradio">Wave Breakers*</label>
+      <label><input type="radio" name="radiostep2" value="Wave Breakers*">Wave Breakers*</label>
     </div>
     <div class="radio">
-      <label><input type="radio" name="optradio">Beautification/Aesthetics</label>
+      <label><input type="radio" name="radiostep2" value="Beautification/Aesthetics">Beautification/Aesthetics</label>
     </div>
   </form>
 </div>
+<button type="button" class="btn btn-default" onclick="goBack()">Back</button>
+<button type="button" class="btn btn-default " onclick="goNext()">Next</button>
                     </div>
-                    <div class="tab-pane fade" id="service-three">
+                    <div class="tab-pane fade" id="step-3">
                         <div class="container">
   <p>Using -generic elevation app- , what is the elevation at the Northern, Southern, Eastern, and Western banks of the water body?</p>
   <form>
-    <div class="radio">
-      <label><input type="radio" name="optradio">North -</label>
+    <div class="row">
+      <div class="col-xs-1">
+        <label for="step3north">North:</label>
+        <input class="form-control" id="step3north" type="text">
+      </div>
     </div>
-    <div class="radio">
-      <label><input type="radio" name="optradio">South -</label>
+    <div class="row">
+      <div class="col-xs-1">
+        <label for="step3south">South:</label>
+        <input class="form-control" id="step3south" type="text">
+      </div>
     </div>
-    <div class="radio">
-      <label><input type="radio" name="optradio">East - </label>
+    <div class="row">
+      <div class="col-xs-1">
+        <label for="step3east">East:</label>
+        <input class="form-control" id="step3east" type="text">
+      </div>
     </div>
-    <div class="radio">
-      <label><input type="radio" name="optradio">West - </label>
+    <div class="row">
+      <div class="col-xs-1">
+        <label for="step3west">West:</label>
+        <input class="form-control" id="step3west" type="text">
+      </div>
     </div>
+    
   </form>
 </div>
+<button type="button" class="btn btn-default" onclick="goBack()" style="margin-top:10px;">Back</button>
+<button type="button" class="btn btn-default " onclick="goNext()" style="margin-top:10px;">Next</button>
                     </div>
-                    <div class="tab-pane fade" id="service-four">
+                    <div class="tab-pane fade" id="step-4">
                         <p>Using the provided surface area tool -here-, follow the directions to determine the water body surface area and  input the value below.</p>
-                        <p><a style="color:antiquewhite" href="https://www.freemaptools.com/area-calculator.htm" target="_blank">Map Tool</a></p>
+                        <p><a class="maplink" href="https://www.freemaptools.com/area-calculator.htm" target="_blank">Map Tool</a></p>
   <form>
     <div class="form-group row">
       <div class="col-xs-1">
-        <label for="ex1">Area:</label>
-        <input class="form-control" id="ex1" type="text">
+        <label for="step4area">Area:</label>
+        <input class="form-control" id="step4area" type="text">
       </div>
     </div>
   </form>
+  <button type="button" class="btn btn-default" onclick="goBack()">Back</button>
+<button type="button" class="btn btn-default " onclick="goNext()">Next</button>
                     </div>
-                    <div class="tab-pane fade" id="service-5">
+                    <div class="tab-pane fade" id="step-5">
                         <p>Using the same -surface area tool- to determine the exact latitude and longitude coordinates of the water body.</p>
-                        <p><a style="color:antiquewhite" href="https://www.freemaptools.com/area-calculator.htm" target="_blank">Map Tool</a></p>
+                        <p><a class="maplink" href="https://www.freemaptools.com/area-calculator.htm" target="_blank">Map Tool</a></p>
   <form>
     <div class="form-group row">
       <div class="col-xs-1">
-        <label for="ex2">Latitude:</label>
-        <input class="form-control" id="ex2" type="text">
+        <label for="step5latitude">Latitude:</label>
+        <input class="form-control" id="step5latitude" type="text">
       </div>
       <div class="col-xs-1">
-        <label for="ex3">Longitude:</label>
-        <input class="form-control" id="ex3" type="text">
+        <label for="step5llongitude">Longitude:</label>
+        <input class="form-control" id="step5longitude" type="text">
       </div>
     </div>
   </form>
+  <button type="button" class="btn btn-default" onclick="goBack()">Back</button>
+<button type="button" class="btn btn-default" onclick="goNext()">Next</button>
                     </div>
                     <!-- end tab-->
-                    <div class="tab-pane fade" id="service-6">
+                    <div class="tab-pane fade" id="step-6">
                         
                        <p>Approximately how deep is the water body at its deepest point?</p>
   <form>
     <div class="form-group row">
       <div class="col-xs-1">
-        <label for="ex4">Depth:</label>
-        <input class="form-control" id="ex4" type="text">
+        <label for="step6depth">Depth:</label>
+        <input class="form-control" id="step6depth" type="text">
       </div>
     </div>
   </form>
+  <button type="button" class="btn btn-default" onclick="goBack()">Back</button>
+<button type="button" class="btn btn-default " onclick="goNext()">Next</button>
                         
                     </div>
                     <!-- end tab-->
-                    <div class="tab-pane fade" id="service-7">
+                    <!--<div class="tab-pane fade" id="step-7">
                         <p>By using the Print Screen function (PrtSc), upload a google map (or suitable equivalent) photo of the water body, and if possible mark the point of inflow and outflow of said water body map.</p>
-                        
-                    </div>
+                        <button type="button" class="btn btn-default" onclick="goBack()">Back</button>
+<button type="button" class="btn btn-default" onclick="goNext()">Next</button>
+                    </div>-->
                     <!-- end tab-->
-                    <div class="tab-pane fade" id="service-8">
+                    <div class="tab-pane fade" id="step-7">
                         <p>Taking into consideration the inherent long-term remediation time frame of the FTW, what treatment time frame are you trying to achieve to reach the optimal 0.01 mg/L concentration of Nitrates/Phosphates?</p>
                         
   <form>
     <div class="form-group row">
       <div class="col-xs-1">
-        <label for="ex5">Derp:</label>
-        <input class="form-control" id="ex5" type="text">
+        <label for="step7val">Derp:</label>
+        <input class="form-control" id="step7val" type="text">
       </div>
     </div>
   </form>
+  <button type="button" class="btn btn-default" onclick="goBack()">Back</button>
+<button type="button" class="btn btn-default " onclick="outputResult()">Submit</button>
                     </div>
                     <!-- end tab-->
-                    <div class="tab-pane fade" id="service-9">
+                    <!--<div class="tab-pane fade" id="step-9">
                         <br>
                         <br>
                         <p>Please provide an email address to establish communications with the FTW technician.</p>
@@ -250,8 +287,9 @@
       <input id="email" type="text" class="form-control" name="email" placeholder="Email">
     </div>
                          </form>
-                        
-                    </div>
+                        <button type="button" class="btn btn-default" onclick="goBack()">Back</button>
+<button type="button" class="btn btn-default" onclick="goNext()">Next</button>
+                    </div>-->
                     <!-- end tab-->
                 </div>
 
@@ -397,6 +435,9 @@
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
+
+    <!-- calculator -->
+    <script src="js/calculator.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>

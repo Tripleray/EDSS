@@ -44,6 +44,31 @@ a{
     background-color:lightblue;
 }
 
+.btn-default{
+  background-color:#005A31;
+  color:white;
+}
+.btn-default:hover{
+  background-color:#4CAF50;
+  color:white;
+}
+.nav-tabs>li>a.done{
+  background-color: #3a7843;
+  color:white;
+  border: 1px solid black;
+}
+.inactive{
+  pointer-events: none !important;
+}
+
+.maplink{
+  color:#005A31;
+  font-weight: bold;
+}
+
+
+
+
 .navbar-custom {
   background-color: #3a7843;
   border-color: #2f6237;
