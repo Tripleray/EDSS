@@ -24,7 +24,7 @@ var emailvalue;
 
 
 function goNext() {
-    alert("currentstep:"+currentstep);
+    //alert("currentstep:"+currentstep);
     if(currentstep ==1){
 
 if($('input[name=radiostep'+currentstep+']:checked').length && $('input[name=radio2step'+currentstep+']:checked').length && $('input[name=radio3step'+currentstep+']:checked').length){
@@ -405,7 +405,7 @@ cost = 30;
 else{
     cost = 25;
 }
-requiredarea = sareavalue * areavalue;
+requiredarea = (sareavalue/100) * areavalue;
 totalcost = requiredarea * cost;
 $('#step5input1').html("Required FTW Surface Area (ft^2)");
 $('#step5response1').html(requiredarea+"ft^2");
@@ -425,7 +425,7 @@ var popupWin = window.open('', '_blank');
  
                   popupWin.document.close();
 
-$('#calcresults').show(1000);
+// $('#calcresults').show(1000);
         }
         else{
             alert("error");
