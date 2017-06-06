@@ -72,7 +72,7 @@ else{
 // alert("radio checked");
 // alert("radio check num:"+$('input[name=radiostep'+currentstep+']:checked').length);
 $('.nav-tabs a[href="#step-'+currentstep+'"]').addClass("done");
-radiostep3 = $('input[name=radio4step2]:checked').val();
+radiostep3 = $('input[name=radiostep3]:checked').val();
 currentstep++;
 return $('#myTab a[href="#step-'+currentstep+'"]').tab('show');
 }
