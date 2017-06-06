@@ -161,6 +161,44 @@
     </tbody>
   </table>
 </div>
+
+<div class="container">
+  <h2>Step 4 Results - System Attributes</h2>           
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Input</th>
+        <th>Output</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="step4input1">John</td>
+        <td id="step4response1">Doe</td>
+      </tr>
+      <tr>
+        <td id="step4input2">Mary</td>
+        <td id="step4response2">Moe</td>
+      </tr>
+      <tr>
+        <td id="step4input3">July</td>
+        <td id="step4response3">Dooley</td>
+      </tr>
+      <tr>
+        <td id="step4input4">July</td>
+        <td id="step4response4">Dooley</td>
+      </tr>
+      <tr>
+        <td id="step4input5">July</td>
+        <td id="step4response5">Dooley</td>
+      </tr>
+      <tr>
+        <td id="step4input6">July</td>
+        <td id="step4response6">Dooley</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
                
 
                 <div id="step4results"> Step 4:</div>
@@ -474,7 +512,7 @@
     <br>
     <p>Using the image below, how clear is your water on a scale of 1 to 5? (1 being clear, 5 being murky)</p>
     <label for="sel1">Select list (select one):</label>
-      <select class="form-control" id="sel1">
+      <select class="form-control" name="sel1" id="sel1">
         <option>1</option>
         <option>2</option>
         <option>3</option>
@@ -482,6 +520,10 @@
         <option>5</option>
       </select>
   </form>
+   <div>
+       <img src="images/Turbidity_Diagram.png"/>
+   </div>
+  
   <button type="button" class="btn btn-default" onclick="goBack()">Back</button>
 <button type="button" class="btn btn-default " onclick="goNext()">Next</button>
 </div>                     

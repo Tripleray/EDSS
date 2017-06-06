@@ -202,6 +202,7 @@ var sareavalue=$.trim($("#step5sarea").val());
 var namevalue=$.trim($("#name").val());
 var numbervalue=$.trim($("#phonenumber").val());
 var emailvalue=$.trim($("#email").val());
+var selectvalue = $('select[name=sel1]').val()
 
 $('.nav-tabs a[href="#step-'+currentstep+'"]').addClass("done");
 $('#resultstitle').html(namevalue+"'s Water Body Floating Treatment Wetland Report");
@@ -351,6 +352,43 @@ $('#step3response1').html("Floating treatment wetlands act as a “living filter
 break;
 
 
+}
+$('#step4input1').html(radiostep4);
+$('#step4input2').html(radio2step4);
+$('#step4input3').html(radio3step4);
+$('#step4input4').html(radio4step4);
+$('#step4input5').html(radio5step4);
+$('#step4input6').html(selectvalue);
+$('#step4response6').html("Turbidity is the murkiness or haziness of water caused by the presence of total suspended solids (TSS) in a water body. TSS can prevent sunlight from reaching the system, which can prevent photosynthesis, reduce the amount of dissolved oxygen in the water body, and increase the temperature of the water due to the sediments capacity to absorb heat. Depending on the levels of TSS in your water body system, implementing a floating treatment wetland, promoting Riparian buffer growth, and increasing aeration of the water can all aid in mediating any dangerous levels of TSS.");
+$('#step4response3').html("Understanding from which direction the inflow of water occurs allows a more concise understanding of your water body system. The inflow can tell us how quickly the water flows in, what this water consists of, and allows users to determine if there are any activities occurring upstream that may be worth knowing.");
+$('#step4response4').html("Just as it is with the inflow, understanding the outflow of the water body system allows you to determine how quickly the standing water in the system flows out of the system. This factor plays into nutrient removal because, to a certain extent, this outflow is removing nutrients and sending it further downstream. By remediating the standing water, you can ensure that the water being sent downstream is not laden with excessive nutrients and will assist in promoting a healthy aquatic ecosystem.");
+switch(radiostep4){
+case "Yes":
+$('#step4response1').html("Stormwater may consist of a variety of  pollutants. This is largely due to the fact that stormwater travels along solid surfaces and has the potential to pick up a variety of pollutants such as pesticides, grease, sediments, oil, chemicals, and other dangerous non-organic materials. Your water system may be at risk for contamination by some of these pollutants, and as such may require more extensive treatments using floating treatment wetlands and associated technology.");
+break;
+
+case "No":
+$('#step4response1').html("N/A");
+break;
+}
+switch(radio2step4){
+case "Yes":
+$('#step4response2').html("Wastewater can contain bacteria, both harmless and dangerous. Considering the variety of bacteria that can thrive in waste, utmost precaution should be taken when interacting with the wastewater. Wastewater treatment can be accomplished through industrial processes, however implementation of a floating treatment wetland may aid in the reduction of bacteria should the system not be overexposed to wastewater. If you believe your water body may be exposed to excessive levels of wastewater, please contact your area’s applicable governmental regulatory agency.");
+break;
+
+case "No":
+$('#step4response2').html("N/A");
+break;
+}
+
+switch(radio5step4){
+case "Naturally Occurring":
+$('#step4response5').html("Naturally occurring water bodies can harbor much more biodiversity because the system was allowed to develop under it’s own natural biological parameters. Additionally, naturally occurring water bodies are typically equipped with an inflow and outflow. This allows the system to constantly remove nutrients and sediments by sending them downstream, while also limiting the capability of insects to lay eggs in stagnant water, reducing insect pest populations.");
+break;
+
+case "Man made":
+$('#step4response5').html("Man made water bodies have a more limited biodiversity because it is typically required to introduce species into the system by hand. While the system may gain biodiversity over time in the newly formed natural environment, it takes significantly longer to develop under these circumstances due to the slight environmental variations that may be present compared to naturally occurring water bodies. Finally, man made water bodies lack the inflow and outflow of water that restricts the flow of nutrients, causing all that become introduced to the water body to become trapped. Simply adding in an area for outflow can help in reducing the nutrient accumulation by allowing water to leave the system, taking harmful nutrients and other factors with it. ");
+break;
 }
 
 
