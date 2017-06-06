@@ -83,14 +83,58 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="well" id="calcresults" style="display:none; font-weight:bold;">
-                <h2 style="font-weight:bold;">Results:</h4>
-                <div id="step1results"> Step 1:</div>
+                <h2 id="resultstitle" style="font-weight:bold;"></h4>
+                <h4 id="resultsphone"></h4>
+                <h4 id="resultsemail"></h4>
+
+               <div class="container">
+  <h2>Step 1 Results-Vegetation Growth</h2>           
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Input</th>
+        <th>Output</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="step1input1">John</td>
+        <td id="step1response1">Doe</td>
+      </tr>
+      <tr>
+        <td id="step1input2">Mary</td>
+        <td id="step1response2">Moe</td>
+      </tr>
+      <tr>
+        <td id="step1input3">July</td>
+        <td id="step1response3">Dooley</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
                 <div id="step2results"> Step 2:</div>
+                <div id="step2footnote"></div>
+
                 <div id="step3results"> Step 3:</div>
+                <div id="step3footnote"></div>
+
                 <div id="step4results"> Step 4:</div>
+                <div id="step4footnote"></div>
+
                 <div id="step5results"> Step 5:</div>
-                <div id="step6results"> Step 6:</div>
+                <div id="step5footnote"></div>
+
+                <!--<div id="step6results"> Step 6:</div>
+                <div id="step6footnote"></div>
+
                 <div id="step7results"> Step 7:</div>
+                <div id="step7footnote"></div>-->
                 </div>
             </div>
         </div>
@@ -114,116 +158,323 @@
                     </li>
                     <li class="inactive"><a href="#step-5" data-toggle="tab">Step 5.</a>
                     </li>
-                    <li class="inactive"><a href="#step-6" data-toggle="tab">Step 6.</a>
-                    </li>
-                    <!--<li class=""><a href="#step-7" data-toggle="tab">Step 7.</a>
-                    </li>-->
-                    <li class="inactive"><a href="#step-7" data-toggle="tab">Step 7.</a>
-                    </li>
-                    <!--<li class=""><a href="#step-9" data-toggle="tab">Step 9.</a>
-                    </li>-->
+        
+                    
                 </ul>
 
                 <div id="myTabContent" class="tab-content">
+<!-- Step 1-->
                     <div class="tab-pane fade active in" id="step-1">
-                        <div class="container">
-  <p>How much vegetation is present on the banks of the water body?</p>
+                        <div class="container page-header">
+  <p>How much vegetation is present on the Riparian Buffer?</p>
   <form>
     <div class="radio">
-      <label><input type="radio" name="radiostep1" value="None">None</label>
+      <label><input type="radio" name="radiostep1" value="None">None <i>(<5% of banks are covered in vegetation)</i></label>
     </div>
     <div class="radio">
-      <label><input type="radio" name="radiostep1" value="Very little">Very little</label>
+      <label><input type="radio" name="radiostep1" value="Very little">Very little <i>(<25% of banks covered in vegetation)</i></label>
     </div>
     <div class="radio">
-      <label><input type="radio" name="radiostep1" value="Moderate">Moderate</label>
+      <label><input type="radio" name="radiostep1" value="Moderate">Moderate <i>(75% of banks covered in vegetation)</i></label>
     </div>
     <div class="radio">
-      <label><input type="radio" name="radiostep1" value="Excessive">Excessive</label>
+      <label><input type="radio" name="radiostep1" value="Excessive">Excessive <i>(>90% of banks covered in vegetation)</i></label>
     </div>
   </form>
 </div>
 
+<div class="container page-header">
+  <p>How much algae is present on the surface of the water body?</p>
+  <form>
+    <div class="radio">
+      <label><input type="radio" name="radio2step1" value="None">None <i>(<5% of banks are covered in vegetation)</i></label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="radio2step1" value="Very little">Very little <i>(<25% of banks covered in vegetation)</i></label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="radio2step1" value="Moderate">Moderate <i>(75% of banks covered in vegetation)</i></label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="radio2step1" value="Excessive">Excessive <i>(>90% of banks covered in vegetation)</i></label>
+    </div>
+  </form>
+</div>
+
+<div class="container page-header">
+  <p>Taking into consideration of its location, approximately how much sunlight does the water body receive?</p>
+  <form>
+    <div class="radio">
+      <label><input type="radio" name="radio3step1" value="Very little">Very little</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="radio3step1" value="Moderate">Moderate</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="radio3step1" value="Excessive">Excessive</label>
+    </div>
+  </form>
+</div>
+
+
+
 <button type="button" class="btn btn-default " onclick="goNext()">Next</button>
                     </div>
+
+<!-- Step 2-->
                     <div class="tab-pane fade" id="step-2">
-                        <div class="container">
-  <p>Using the provided -application descriptions-, what is your primary purpose of application?</p>
+                        
+                      <div class="container page-header">
+  <p>Is their significant agricultural activity being conducted near the water body? If so, please describe.</p>
   <form>
     <div class="radio">
-      <label><input type="radio" name="radiostep2" value="Water Quality Remediation">Water Quality Remediation</label>
+      <label><input type="radio" name="radiostep2" value="Yes">Yes</label>
     </div>
     <div class="radio">
-      <label><input type="radio" name="radiostep2" value="Wildlife Habitat Management">Wildlife Habitat Management</label>
-    </div>
-    <div class="radio">
-      <label><input type="radio" name="radiostep2" value="Wetland Restoration">Wetland Restoration</label>
-    </div>
-    <div class="radio">
-      <label><input type="radio" name="radiostep2" value="Lake Restoration">Lake Restoration</label>
-    </div>
-    <div class="radio">
-      <label><input type="radio" name="radiostep2" value="Wave Breakers*">Wave Breakers*</label>
-    </div>
-    <div class="radio">
-      <label><input type="radio" name="radiostep2" value="Beautification/Aesthetics">Beautification/Aesthetics</label>
+      <label><input type="radio" name="radiostep2" value="No">No</label>
     </div>
   </form>
-</div>
-<button type="button" class="btn btn-default" onclick="goBack()">Back</button>
-<button type="button" class="btn btn-default " onclick="goNext()">Next</button>
-                    </div>
-                    <div class="tab-pane fade" id="step-3">
-                        <div class="container">
-  <p>Using -generic elevation app- , what is the elevation at the Northern, Southern, Eastern, and Western banks of the water body?</p>
+</div>  
+
+<div class="container page-header">
+  <p>Do any of these agricultural activities utilize pesticides?</p>
   <form>
-    <div class="row">
-      <div class="col-xs-1">
-        <label for="step3north">North:</label>
-        <input class="form-control" id="step3north" type="text">
-      </div>
+    <div class="radio">
+      <label><input type="radio" name="radio2step2" value="Yes">Yes</label>
     </div>
-    <div class="row">
-      <div class="col-xs-1">
-        <label for="step3south">South:</label>
-        <input class="form-control" id="step3south" type="text">
-      </div>
+    <div class="radio">
+      <label><input type="radio" name="radio2step2" value="No">No</label>
     </div>
-    <div class="row">
-      <div class="col-xs-1">
-        <label for="step3east">East:</label>
-        <input class="form-control" id="step3east" type="text">
-      </div>
+    <div class="radio">
+      <label><input type="radio" name="radio2step2" value="N/A">N/A</label>
     </div>
-    <div class="row">
-      <div class="col-xs-1">
-        <label for="step3west">West:</label>
-        <input class="form-control" id="step3west" type="text">
-      </div>
-    </div>
-    
   </form>
-</div>
-<button type="button" class="btn btn-default" onclick="goBack()" style="margin-top:10px;">Back</button>
-<button type="button" class="btn btn-default " onclick="goNext()" style="margin-top:10px;">Next</button>
-                    </div>
-                    <div class="tab-pane fade" id="step-4">
-                        <p>Using the provided surface area tool -here-, follow the directions to determine the water body surface area and  input the value below.</p>
-                        <p><a class="maplink" href="https://www.freemaptools.com/area-calculator.htm" target="_blank">Map Tool</a></p>
+</div> 
+
+<div class="container page-header">
+  <p>Is their significant industrial activity being conducted near the water body?</p>
   <form>
-    <div class="form-group row">
-      <div class="col-xs-1">
-        <label for="step4area">Area:</label>
-        <input class="form-control" id="step4area" type="text">
-      </div>
+    <div class="radio">
+      <label><input type="radio" name="radio3step2" value="Yes">Yes</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="radio3step2" value="No">No</label>
+    </div>
+  </form>
+</div>  
+
+<div class="container page-header">
+  <p>Do any of these industrial activities have the potential to cause runoff contamination?</p>
+  <form>
+    <div class="radio">
+      <label><input type="radio" name="radio4step2" value="Yes">Yes</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="radio4step2" value="No">No</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="radio4step2" value="N/A">N/A</label>
     </div>
   </form>
   <button type="button" class="btn btn-default" onclick="goBack()">Back</button>
 <button type="button" class="btn btn-default " onclick="goNext()">Next</button>
+</div> 
                     </div>
+ 
+                        
+                        
+                        
+
+
+<!-- Step 3-->
+                    <div class="tab-pane fade" id="step-3">
+
+<div class="container">
+  <p>Using the provided <a href="applications.html" target="_blank">application descriptions</a>, what is your primary purpose of application?</p>
+  <form>
+    <div class="radio">
+      <label><input type="radio" name="radiostep3" value="Water Quality Remediation">Water Quality Remediation</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="radiostep3" value="Wildlife Habitat Management">Wildlife Habitat Management</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="radiostep3" value="Species/Pest Control">Species/Pest Control</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="radiostep3" value="Wetland Restoration">Wetland Restoration</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="radiostep3" value="Lake Restoration">Lake Restoration</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="radiostep3" value="Wave Breakers*">Wave Breakers* or Bank Stabilization</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="radiostep3" value="Beautification/Aesthetics">Beautification/Aesthetics</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="radiostep3" value="Floating Dock Construction">Floating Dock Construction (structural platform)</label>
+    </div>
+     <div class="radio">
+      <label><input type="radio" name="radiostep3" value="Odor reducer">Odor reducer</label>
+    </div>
+  </form>
+  <button type="button" class="btn btn-default" onclick="goBack()" style="margin-top:10px;">Back</button>
+<button type="button" class="btn btn-default " onclick="goNext()" style="margin-top:10px;">Next</button>
+</div>
+                    </div>
+                    
+
+
+
+
+                       
+
+                   
+
+
+
+<!-- Step 4-->
+                    <div class="tab-pane fade" id="step-4">
+                        
+                        <div class="container page-header">
+  <p>Would this water body be considered stormwater?</p>
+  <form>
+    <div class="radio">
+      <label><input type="radio" name="radiostep4" value="Yes">Yes</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="radiostep4" value="No">No</label>
+    </div>
+  </form>
+</div>  
+
+<div class="container page-header">
+  <p>Would this water body be considered wastewater?</p>
+  <form>
+    <div class="radio">
+      <label><input type="radio" name="radio2step4" value="Yes">Yes</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="radio2step4" value="No">No</label>
+    </div>
+  </form>
+</div>  
+
+<div class="container page-header">
+  <p>From what direction does your water body fill from? (Inflow)</p>
+  <form>
+    <div class="radio">
+      <label><input type="radio" name="radio3step4" value="North">North</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="radio3step4" value="Northeast">Northeast</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="radio3step4" value="East">East</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="radio3step4" value="Southeast">Southeast</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="radio3step4" value="South">South</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="radio3step4" value="Southwest">Southwest</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="radio3step4" value="West">West</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="radio3step4" value="Northwest">Northwest</label>
+    </div>
+  </form>
+</div> 
+
+<div class="container page-header">
+  <p>From what direction does your water body drain from? (Outflow)</p>
+  <form>
+    <div class="radio">
+      <label><input type="radio" name="radio4step4" value="North">North</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="radio4step4" value="Northeast">Northeast</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="radio4step4" value="East">East</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="radio4step4" value="Southeast">Southeast</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="radio4step4" value="South">South</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="radio4step4" value="Southwest">Southwest</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="radio4step4" value="West">West</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="radio4step4" value="Northwest">Northwest</label>
+    </div>
+  </form>
+</div> 
+                        
+   <div class="container page-header">
+  <p>Is your water body naturally occurring or man made?</p>
+  <form>
+    <div class="radio">
+      <label><input type="radio" name="radio5step4" value="Naturally Occurring">Naturally Occurring</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="radio5step4" value="Man made">Man made</label>
+    </div>
+    <br>
+    <br>
+    <p>Using the image below, how clear is your water on a scale of 1 to 5? (1 being clear, 5 being murky)</p>
+    <label for="sel1">Select list (select one):</label>
+      <select class="form-control" id="sel1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+  </form>
+  <button type="button" class="btn btn-default" onclick="goBack()">Back</button>
+<button type="button" class="btn btn-default " onclick="goNext()">Next</button>
+</div>                     
+                        
+                        
+                        
+                        
+                        
+  
+                    </div>
+
+
+
+
+<!-- Step 5-->
                     <div class="tab-pane fade" id="step-5">
-                        <p>Using the same -surface area tool- to determine the exact latitude and longitude coordinates of the water body.</p>
-                        <p><a class="maplink" href="https://www.freemaptools.com/area-calculator.htm" target="_blank">Map Tool</a></p>
+<div class="container page-header">
+<p>Using the provided surface area tool <a class="maplink" href="https://www.freemaptools.com/area-calculator.htm" target="_blank">here</a>, follow the directions to determine the water body surface area and  input the value below.</p>
+  <form>
+    <div class="form-group row">
+      <div class="col-xs-1">
+        <label for="step5area">Area:</label>
+        <input class="form-control" id="step5area" type="text">
+      </div>
+    </div>
+  </form>
+
+</div>
+
+     <div class="container page-header">
+<p>Using the same <a class="maplink" href="https://www.freemaptools.com/area-calculator.htm" target="_blank">surface area tool</a> to determine the exact latitude and longitude coordinates of the water body.</p>
+                        
   <form>
     <div class="form-group row">
       <div class="col-xs-1">
@@ -236,61 +487,65 @@
       </div>
     </div>
   </form>
-  <button type="button" class="btn btn-default" onclick="goBack()">Back</button>
-<button type="button" class="btn btn-default" onclick="goNext()">Next</button>
-                    </div>
-                    <!-- end tab-->
-                    <div class="tab-pane fade" id="step-6">
-                        
-                       <p>Approximately how deep is the water body at its deepest point?</p>
+
+     </div>   
+     
+     <div class="container page-header">
+ <p>Approximately how deep is the water body at its deepest point?</p>
   <form>
     <div class="form-group row">
       <div class="col-xs-1">
-        <label for="step6depth">Depth:</label>
-        <input class="form-control" id="step6depth" type="text">
+        <label for="step5depth">Depth:</label>
+        <input class="form-control" id="step5depth" type="text">
       </div>
     </div>
   </form>
-  <button type="button" class="btn btn-default" onclick="goBack()">Back</button>
-<button type="button" class="btn btn-default " onclick="goNext()">Next</button>
-                        
-                    </div>
-                    <!-- end tab-->
-                    <!--<div class="tab-pane fade" id="step-7">
-                        <p>By using the Print Screen function (PrtSc), upload a google map (or suitable equivalent) photo of the water body, and if possible mark the point of inflow and outflow of said water body map.</p>
-                        <button type="button" class="btn btn-default" onclick="goBack()">Back</button>
-<button type="button" class="btn btn-default" onclick="goNext()">Next</button>
-                    </div>-->
-                    <!-- end tab-->
-                    <div class="tab-pane fade" id="step-7">
-                        <p>Taking into consideration the inherent long-term remediation time frame of the FTW, what treatment time frame are you trying to achieve to reach the optimal 0.01 mg/L concentration of Nitrates/Phosphates?</p>
-                        
+
+     </div> 
+
+
+  <div class="container page-header">
+<p>What percentage of Surface Area (SA) would you like covered? (Optimal coverage: 20%)</p>
   <form>
     <div class="form-group row">
       <div class="col-xs-1">
-        <label for="step7val">Derp:</label>
-        <input class="form-control" id="step7val" type="text">
+        <label for="step5sarea">Surface Area:</label>
+        <input class="form-control" id="step5sarea" type="text">
       </div>
     </div>
   </form>
-  <button type="button" class="btn btn-default" onclick="goBack()">Back</button>
-<button type="button" class="btn btn-default " onclick="outputResult()">Submit</button>
-                    </div>
-                    <!-- end tab-->
-                    <!--<div class="tab-pane fade" id="step-9">
-                        <br>
-                        <br>
-                        <p>Please provide an email address to establish communications with the FTW technician.</p>
-                         <form>
+  </div>                      
+
+<div class="container page-header">
+<form>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      <input id="name" type="text" class="form-control" name="name" placeholder="name">
+    </div>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+      <input id="phonenumber" type="text" class="form-control" name="phonenumber" placeholder="Phone number">
+    </div>
     <div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
       <input id="email" type="text" class="form-control" name="email" placeholder="Email">
     </div>
-                         </form>
-                        <button type="button" class="btn btn-default" onclick="goBack()">Back</button>
-<button type="button" class="btn btn-default" onclick="goNext()">Next</button>
-                    </div>-->
+  </form>
+<button type="button" class="btn btn-default" onclick="goBack()">Back</button>
+<button type="button" class="btn btn-default" onclick="outputResult()">Submit</button>
+</div>
+
+
+  
+                    </div>
                     <!-- end tab-->
+
+
+
+                    
+                    
+                    
+                   
                 </div>
 
             </div>
