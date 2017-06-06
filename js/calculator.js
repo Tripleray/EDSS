@@ -208,9 +208,9 @@ $('.nav-tabs a[href="#step-'+currentstep+'"]').addClass("done");
 $('#resultstitle').html(namevalue+"'s Water Body Floating Treatment Wetland Report");
 $('#resultsphone').html(numbervalue);
 $('#resultsemail').html(emailvalue);
-$('#step1input1').html(radiostep1);
-$('#step1input2').html(radio2step1);
-$('#step1input3').html(radio3step1);
+$('#step1input1').html("Question 1: "+radiostep1);
+$('#step1input2').html("Question 2: "+radio2step1);
+$('#step1input3').html("Question 3: "+radio3step1);
 switch(radiostep1){
 case "None":
 $('#step1response1').html("Your Riparian Buffer lacks any riparian vegetation, putting your system at extreme risk for runoff and erosion issues, and more specifically total suspended solids (TSS). These TSS increase turbidity (murkiness), reducing the availability of oxygen in the water, and ultimately suffocating aquatic organisms. We recommend planting both Riparian Buffer plants and installing floating treatment wetlands along the banks to reduce the inflow of erosion.");
@@ -261,10 +261,10 @@ $('#step1response3').html("Your water body is being moderately impacted by the c
 break;
 }
 
-$('#step2input1').html(radiostep2);
-$('#step2input2').html(radio2step2);
-$('#step2input3').html(radio3step2);
-$('#step2input4').html(radio4step2);
+$('#step2input1').html("Question 4: "+radiostep2);
+$('#step2input2').html("Question 5: "+radio2step2);
+$('#step2input3').html("Question 6: "+radio3step2);
+$('#step2input4').html("Question 7: "+radio4step2);
 switch(radiostep2){
 case "Yes":
 $('#step2response1').html("Agricultural activities such as over-fertilization, overuse of manure, and the utilization of pesticides raises the potential of a harmful nutrient or chemical entering the system. Over-fertilization leads to an excess of inorganic nutrients that contribute to algae blooms. Overuse of manure can promote E. Coli outbreaks and contributes to decrease dissolved oxygen in the water.");
@@ -313,7 +313,7 @@ $('#step2response4').html("N/A");
 break;
 }
 
-$('#step3input1').html(radiostep3);
+$('#step3input1').html("Question 8: "+radiostep3);
 switch(radiostep3){
 case "Water Quality Remediation":
 $('#step3response1').html("Due to the large amount of surface area in floating treatment wetlands, and water circulation through the material, many water quality parameters can be remediated. These parameters include suspended solids (dirt particles which can suffocate aquatic life), nutrients such as; total nitrogen, total phosphorous, copper, zinc, etc., dissolved oxygen concentration, and ammonia. Please refer to the case studies page -HERE- to become familiar with how floating treatment wetlands have impacted water quality. ");
@@ -353,12 +353,12 @@ break;
 
 
 }
-$('#step4input1').html(radiostep4);
-$('#step4input2').html(radio2step4);
-$('#step4input3').html(radio3step4);
-$('#step4input4').html(radio4step4);
-$('#step4input5').html(radio5step4);
-$('#step4input6').html(selectvalue);
+$('#step4input1').html("Question 9: "+radiostep4);
+$('#step4input2').html("Question 10: "+radio2step4);
+$('#step4input3').html("Question 11: "+radio3step4);
+$('#step4input4').html("Question 12: "+radio4step4);
+$('#step4input5').html("Question 13: "+radio5step4);
+$('#step4input6').html("Question 14: "+selectvalue);
 $('#step4response6').html("Turbidity is the murkiness or haziness of water caused by the presence of total suspended solids (TSS) in a water body. TSS can prevent sunlight from reaching the system, which can prevent photosynthesis, reduce the amount of dissolved oxygen in the water body, and increase the temperature of the water due to the sediments capacity to absorb heat. Depending on the levels of TSS in your water body system, implementing a floating treatment wetland, promoting Riparian buffer growth, and increasing aeration of the water can all aid in mediating any dangerous levels of TSS.");
 $('#step4response3').html("Understanding from which direction the inflow of water occurs allows a more concise understanding of your water body system. The inflow can tell us how quickly the water flows in, what this water consists of, and allows users to determine if there are any activities occurring upstream that may be worth knowing.");
 $('#step4response4').html("Just as it is with the inflow, understanding the outflow of the water body system allows you to determine how quickly the standing water in the system flows out of the system. This factor plays into nutrient removal because, to a certain extent, this outflow is removing nutrients and sending it further downstream. By remediating the standing water, you can ensure that the water being sent downstream is not laden with excessive nutrients and will assist in promoting a healthy aquatic ecosystem.");
@@ -390,8 +390,40 @@ case "Man made":
 $('#step4response5').html("Man made water bodies have a more limited biodiversity because it is typically required to introduce species into the system by hand. While the system may gain biodiversity over time in the newly formed natural environment, it takes significantly longer to develop under these circumstances due to the slight environmental variations that may be present compared to naturally occurring water bodies. Finally, man made water bodies lack the inflow and outflow of water that restricts the flow of nutrients, causing all that become introduced to the water body to become trapped. Simply adding in an area for outflow can help in reducing the nutrient accumulation by allowing water to leave the system, taking harmful nutrients and other factors with it. ");
 break;
 }
-
-
+var greenarea;
+var cost;
+var requiredarea;
+var totalcost;
+areavalue = parseFloat(areavalue);
+sareavalue = parseFloat(sareavalue);
+if(sareavalue<=10){
+cost = 35;
+}
+else if(sareavalue<=20){
+cost = 30;
+}
+else{
+    cost = 25;
+}
+requiredarea = sareavalue * areavalue;
+totalcost = requiredarea * cost;
+$('#step5input1').html("Required FTW Surface Area (ft^2)");
+$('#step5response1').html(requiredarea+"ft^2");
+$('#step5input2').html("Cost of FTW ($)");
+$('#step5response2').html("$"+totalcost);
+var resultswindow =  document.getElementsByClassName('calcresults')[0].innerHTML;
+var popupWin = window.open('', '_blank');
+                  var html = "<html><head>";
+                  popupWin.document.open();
+                  html = html
+            + "<link rel='stylesheet' href='css/bootstrap.min.css' />"
+            + "<link rel='stylesheet' href='css/modern-business.css'>"
+               + "<link rel='stylesheet' href='css/site.css' />";
+                  html = html + '</head><body><div class="print-buttons" style="text-align:center;"><button onclick="window.print();">Print</button><button onclick="window.close();">Exit</button></div>' + resultswindow+ '</body></html>';
+ 
+                  popupWin.document.write(html);
+ 
+                  popupWin.document.close();
 
 $('#calcresults').show(1000);
         }
